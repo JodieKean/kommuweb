@@ -3,8 +3,8 @@
 # ----------------------- #
 url: https://kommu.ai
 title: Kommu
-email: support@kommu.com
-author: Kommu Admin
+email: support@kommu.ai
+author: Kommu
 description: "KommuAssist 1s: AI-Powered Level 2 Autonomous Driving Solution"
 #  You can edit this line in _config.yml. It will appear in your document 
 #  head meta (for Google search results) and in your feed.xml site 
@@ -33,5 +33,5 @@ social:
   - title: github
     url: https://github.com/kommu/bukapilot
   - title: facebook
-    url: https://instagram.com/kommuai
+    url: https://www.facebook.com/kommu.official
 
