@@ -274,12 +274,12 @@ title: Checkout
         const bundled = KommuPricing.getAddonSurchargeFromSelections(selections, currency, thenBlock);
 
         // Subscription meta (prefer promo override if present)
-        let months = 36;
+        let months = 24;
         let subscriptionId = '';
         try {
           const dev = (window.products||[]).find(p => (p.name||'').toLowerCase()==='kommuassist2');
           if (dev?.subscription) {
-            months = parseInt(dev.subscription.month || 36, 10) || 36;
+            months = parseInt(dev.subscription.month || 24, 10) || 24;
             subscriptionId = dev.subscription.id || '';
           }
         } catch(_) {}
