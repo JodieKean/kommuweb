@@ -35,7 +35,7 @@
   includes:
   - ADAS relay and OBD connector
   - Full set of cables
-  - Mount, sticker, wipes
+  - KA2 mount, sticker, wipes
 
   dropdown:
     title: Select car model
