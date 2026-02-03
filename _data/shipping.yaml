@@ -10,26 +10,26 @@
   name: Thailand
   rates:
     MYR: 129.00
-    USD: 29.00
+    USD: 34.00
 
 - code: SG
   name: Singapore
   rates:
     MYR: 129.00
-    USD: 29.00
+    USD: 34.00
 
 - code: PH
   name: Philippines
   rates:
     MYR: 129.00
-    USD: 29.00
+    USD: 34.00
     
 
 - code: AU
   name: Australia
   rates:
-    MYR: 250.00
-    USD: 59.00
+    MYR: 249.00
+    USD: 66.00
 
 - code: LK
   name: Sri Lanka
@@ -41,7 +41,7 @@
   name: Denmark
   rates:
     MYR: 249.00
-    USD: 62.00
+    USD: 66.00
 
 - code: KR
   name: South Korea
