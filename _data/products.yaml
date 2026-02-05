@@ -1,13 +1,13 @@
 - name: KommuAssist2
   category: Device
   slashed_prices:
-    MYR: 4499
-    USD: 1199
+    MYR: 4999
+    USD: 1299
   prices:
-    MYR: 4499.00
-    USD: 1199.00
+    MYR: 4999.00
+    USD: 1299.00
   sst: 
-    MYR: 409.00
+    MYR: 454.45
   big_discount:
     MYR: 400
     USD: 0
@@ -18,7 +18,7 @@
     monthly_price:
       MYR: 125.00
     deposit:
-      MYR: 1500.00
+      MYR: 2000.00
 
 - name: Sim Card
   category: Add-on
