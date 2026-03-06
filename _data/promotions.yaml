@@ -13,8 +13,8 @@
   valid_from: 2025-11-22
   valid_until: 2026-01-31
   prices:
-    MYR: 4099.00
-    USD: 1099.00
+    MYR: 4599.00
+    USD: 1199.00
 
 - product: KommuAssist2
   type: subscription
@@ -26,4 +26,4 @@
   monthly_price:
     MYR: 125.00
   deposit:
-    MYR: 1100.00
+    MYR: 1600.00
