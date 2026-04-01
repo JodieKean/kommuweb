@@ -24,18 +24,6 @@
     MYR: 88.00
     USD: 22.00
 
-- code: KR
-  name: South Korea
-  rates:
-    MYR: 196.00
-    USD: 49.00
-
-- code: LK
-  name: Sri Lanka
-  rates:
-    MYR: 162.00
-    USD: 41.00
-
 - code: MA
   name: Morocco
   rates:
@@ -53,6 +41,18 @@
   rates:
     MYR: 141.00
     USD: 36.00
+
+- code: KR
+  name: South Korea
+  rates:
+    MYR: 196.00
+    USD: 49.00
+
+- code: LK
+  name: Sri Lanka
+  rates:
+    MYR: 162.00
+    USD: 41.00
 
 - code: TH
   name: Thailand
