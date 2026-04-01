@@ -6,8 +6,44 @@
     MYR: 0.00
     USD: 0.00
 
-- code: TH
-  name: Thailand
+- code: AU
+  name: Australia
+  rates:
+    MYR: 108.00
+    USD: 27.00
+
+- code: DK
+  name: Denmark
+  rates:
+    MYR: 274.00
+    USD: 69.00
+
+- code: ID
+  name: Indonesia
+  rates:
+    MYR: 88.00
+    USD: 22.00
+
+- code: KR
+  name: South Korea
+  rates:
+    MYR: 196.00
+    USD: 49.00
+
+- code: LK
+  name: Sri Lanka
+  rates:
+    MYR: 162.00
+    USD: 41.00
+
+- code: MA
+  name: Morocco
+  rates:
+    MYR: 399.00
+    USD: 101.50
+
+- code: PH
+  name: Philippines
   rates:
     MYR: 141.00
     USD: 36.00
@@ -18,39 +54,9 @@
     MYR: 141.00
     USD: 36.00
 
-- code: PH
-  name: Philippines
+- code: TH
+  name: Thailand
   rates:
     MYR: 141.00
     USD: 36.00
-    
 
-- code: AU
-  name: Australia
-  rates:
-    MYR: 108.00
-    USD: 27.00
-
-- code: LK
-  name: Sri Lanka
-  rates:
-    MYR: 162.00
-    USD: 41.00
-
-- code: DK
-  name: Denmark
-  rates:
-    MYR: 274.00
-    USD: 69.00
-
-- code: KR
-  name: South Korea
-  rates:
-    MYR: 196.00
-    USD: 49.00
-
-- code: MA
-  name: Morocco
-  rates:
-    MYR: 399.00
-    USD: 101.50
