@@ -160,6 +160,47 @@
     return out;
   }
 
+  function getSubscriptionMonths(curr, labels){
+    const ccy = (curr||'').toUpperCase();
+    let months = 24;
+    try{
+      const dev = (products||[]).find(p => (p.name||'').toLowerCase()==='kommuassist2');
+      if (dev?.subscription) months = parseInt(dev.subscription.month || 24, 10) || 24;
+    } catch(_) {}
+    const subPromo = getSubscriptionPromoFromLabels(labels, curr);
+    if (subPromo && subPromo.months) months = subPromo.months;
+    return months;
+  }
+
+  /**
+   * Total amount attributed to the subscription plan (deposit + all instalments),
+   * separate from the one-off `amount` sent to the payment gateway.
+   * Optional `resolved`: { deposit, monthly, months } from checkout (promo overrides applied).
+   */
+  function getSubDevicePriceByCurrency(curr, labels, resolved){
+    const ccy = (curr||'').toUpperCase();
+    const promo = Array.isArray(labels) && labels.length
+      ? activePromoFor('KommuAssist2','subscription',ccy,labels) : null;
+    if (promo && promo.sub_device_price != null){
+      if (typeof promo.sub_device_price === 'object' && promo.sub_device_price[ccy] != null)
+        return parseFloat(promo.sub_device_price[ccy]) || 0;
+      if (promo.currency && (promo.currency||'').toUpperCase()===ccy && typeof promo.sub_device_price !== 'object')
+        return parseFloat(promo.sub_device_price) || 0;
+    }
+    try{
+      const dev = (products||[]).find(p => (p.name||'').toLowerCase() === 'kommuassist2');
+      const map = dev?.subscription?.sub_device_price;
+      if (map && map[ccy] != null) return parseFloat(map[ccy]) || 0;
+    } catch(_) {}
+    const dep = resolved && typeof resolved.deposit === 'number' && !Number.isNaN(resolved.deposit)
+      ? resolved.deposit : getDeviceDepositByCurrency(ccy, labels);
+    const mon = resolved && typeof resolved.monthly === 'number' && !Number.isNaN(resolved.monthly)
+      ? resolved.monthly : getDeviceMonthlyByCurrency(ccy, labels);
+    const mos = resolved && typeof resolved.months === 'number' && !Number.isNaN(resolved.months) && resolved.months > 0
+      ? resolved.months : getSubscriptionMonths(curr, labels);
+    return (dep || 0) + (mon || 0) * (mos || 0);
+  }
+
   // ----- Rules matcher (for product/cart flows)
   function matchRule(ctx){
     const cfg = (rulesConfig && rulesConfig.rules) ? rulesConfig.rules : (Array.isArray(rulesConfig) ? rulesConfig : []);
@@ -204,6 +245,7 @@
     getPreferredLocale, getCurrencyCode, getFormatter,
     getProductPriceByNameCurrency, getBaseDevicePriceByCurrency,
     getDevicePriceByCurrency, getDeviceMonthlyByCurrency, getDeviceDepositByCurrency,
+    getSubDevicePriceByCurrency, getSubscriptionMonths,
     matchRule, getAddonSurchargeFromSelections, getSubscriptionPromoFromLabels, getSlashedDevicePriceByCurrency, getSSTDevicePriceByCurrency
   };
 

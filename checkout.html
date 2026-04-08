@@ -297,7 +297,14 @@ title: Checkout
           }
         }
 
-        return { thenBlock, promoLabels, deviceOneOff, deviceMonthly: (typeof _monthlyOverride === 'number' ? _monthlyOverride : deviceMonthly), bundled, months, subscriptionId, deposit };
+        const monthlyResolved = (typeof _monthlyOverride === 'number' ? _monthlyOverride : deviceMonthly);
+        const subDevicePrice = KommuPricing.getSubDevicePriceByCurrency(currency, promoLabels, {
+          deposit,
+          monthly: monthlyResolved,
+          months
+        });
+
+        return { thenBlock, promoLabels, deviceOneOff, deviceMonthly: monthlyResolved, bundled, months, subscriptionId, deposit, subDevicePrice };
 
     }
   }
@@ -964,6 +971,7 @@ function checkoutSubmit() {
     params.append("subscription",     subscriptionId);
     params.append("harness",          selections.model || "");
     params.append("amount",           devicePrice.toFixed(2));
+    params.append("sub_device_price", (pricing.subDevicePrice != null ? Number(pricing.subDevicePrice) : 0).toFixed(2));
     params.append("monthlyPayment",   monthlyPayment);
     params.append("deposit",          depositAmount);
     params.append("installation",     selections.install || "");

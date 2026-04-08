@@ -19,6 +19,9 @@
       MYR: 175.00
     deposit:
       MYR: 1999.00
+    # Total subscription plan value (deposit + all monthly payments); not the same as gateway `amount`
+    sub_device_price:
+      MYR: 6199.00
 
 - name: Sim Card
   category: Add-on

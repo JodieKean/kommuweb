@@ -6,6 +6,7 @@
 # subscription:
 #   - single currency: currency: MYR, monthly_price: 120.00
 #   - multi currency:  monthly_prices: { MYR: 120.00 }
+#   - sub_device_price: { MYR: ... } total plan value for subscriptions (optional; overrides product)
 
 - product: KommuAssist2
   type: one_off
@@ -27,3 +28,5 @@
     MYR: 175.00
   deposit:
     MYR: 1599.00
+  sub_device_price:
+    MYR: 5799.00
